@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">"SMSBlocker "</string>
     <string name="action_settings">Settings</string>
+    <string name="condition">condition</string>
+    <string name="name">name</string>
+    <string name="is_active">Is Active</string>
+    <string name="title_activity_roles">RolesActivity</string>
+    <string name="title_activity_roles_show">RolesShowActivity</string>
+    <string name="action_roles">Roles</string>
 </resources>
