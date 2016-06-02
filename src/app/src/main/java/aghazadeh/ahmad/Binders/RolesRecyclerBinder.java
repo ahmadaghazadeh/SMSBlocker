@@ -6,13 +6,10 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-import java.util.List;
 
 import aghazadeh.ahmad.business.BinderViewType;
 import aghazadeh.ahmad.smsblocke.db.Roles;
 import aghazadeh.ahmad.smsblocker.R;
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import jp.satorufujiwara.binder.recycler.RecyclerBinder;
 
 /**
@@ -20,11 +17,11 @@ import jp.satorufujiwara.binder.recycler.RecyclerBinder;
  */
 public class RolesRecyclerBinder extends RecyclerBinder<BinderViewType> {
 
-    private final Roles roles;
+    private final Roles role;
 
-    public RolesRecyclerBinder(Activity activity, Roles roles) {
+    public RolesRecyclerBinder(Activity activity, Roles role) {
         super(activity, BinderViewType.ROLES_TYPE);
-        this.roles = roles;
+        this.role = role;
     }
 
     @Override
@@ -40,9 +37,9 @@ public class RolesRecyclerBinder extends RecyclerBinder<BinderViewType> {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
         ViewHolder holder = (ViewHolder) viewHolder;
-        holder.name.setText(roles.getName());
-        holder.condition.setText(roles.getCondition());
-        holder.isActive.setChecked(roles.getIsActive());
+        holder.name.setText(role.getRoleName());
+        holder.condition.setText(role.getCondition());
+        holder.isActive.setChecked(role.getIsActive());
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

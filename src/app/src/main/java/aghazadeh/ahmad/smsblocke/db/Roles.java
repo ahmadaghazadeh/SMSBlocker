@@ -7,7 +7,7 @@ package aghazadeh.ahmad.smsblocke.db;
 public class Roles {
 
     private Long id;
-    private String name;
+    private String roleName;
     private Boolean isActive;
     private String condition;
 
@@ -18,9 +18,9 @@ public class Roles {
         this.id = id;
     }
 
-    public Roles(Long id, String name, Boolean isActive, String condition) {
+    public Roles(Long id, String roleName, Boolean isActive, String condition) {
         this.id = id;
-        this.name = name;
+        this.roleName = roleName;
         this.isActive = isActive;
         this.condition = condition;
     }
@@ -33,12 +33,12 @@ public class Roles {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
     public Boolean getIsActive() {

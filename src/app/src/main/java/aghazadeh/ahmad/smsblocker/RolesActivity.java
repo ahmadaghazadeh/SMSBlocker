@@ -35,7 +35,7 @@ public class RolesActivity extends AppCompatActivity {
                 try {
                     Roles roles=new Roles();
                     roles.setIsActive(isActive.isChecked());
-                    roles.setName(name.getText().toString());
+                    roles.setRoleName(name.getText().toString());
                     roles.setCondition(condition.getText().toString());
                     DaoAPP.getRolesDao().insertInTx(roles);
 

@@ -7,4 +7,5 @@
     <string name="title_activity_roles">RolesActivity</string>
     <string name="title_activity_roles_show">RolesShowActivity</string>
     <string name="action_roles">Roles</string>
+
 </resources>

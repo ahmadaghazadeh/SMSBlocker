@@ -1,8 +1,10 @@
 package aghazadeh.ahmad.dbGeneretor;
 
+
 import de.greenrobot.daogenerator.DaoGenerator;
 import de.greenrobot.daogenerator.Entity;
 import de.greenrobot.daogenerator.Schema;
+
 
 public class Main {
     String TAG="dbGenerator";
@@ -12,7 +14,7 @@ public class Main {
 
             Entity roles=schema.addEntity("Roles");
             roles.addIdProperty();
-            roles.addStringProperty("name");
+            roles.addStringProperty("roleName");
             roles.addBooleanProperty("isActive");
             roles.addStringProperty("condition");
 

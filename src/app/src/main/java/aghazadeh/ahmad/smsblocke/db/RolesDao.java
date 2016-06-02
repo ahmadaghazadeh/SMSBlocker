@@ -24,7 +24,7 @@ public class RolesDao extends AbstractDao<Roles, Long> {
     */
     public static class Properties {
         public final static Property Id = new Property(0, Long.class, "id", true, "_id");
-        public final static Property Name = new Property(1, String.class, "name", false, "NAME");
+        public final static Property RoleName = new Property(1, String.class, "roleName", false, "ROLE_NAME");
         public final static Property IsActive = new Property(2, Boolean.class, "isActive", false, "IS_ACTIVE");
         public final static Property Condition = new Property(3, String.class, "condition", false, "CONDITION");
     };
@@ -43,7 +43,7 @@ public class RolesDao extends AbstractDao<Roles, Long> {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"ROLES\" (" + //
                 "\"_id\" INTEGER PRIMARY KEY ," + // 0: id
-                "\"NAME\" TEXT," + // 1: name
+                "\"ROLE_NAME\" TEXT," + // 1: roleName
                 "\"IS_ACTIVE\" INTEGER," + // 2: isActive
                 "\"CONDITION\" TEXT);"); // 3: condition
     }
@@ -64,9 +64,9 @@ public class RolesDao extends AbstractDao<Roles, Long> {
             stmt.bindLong(1, id);
         }
  
-        String name = entity.getName();
-        if (name != null) {
-            stmt.bindString(2, name);
+        String roleName = entity.getRoleName();
+        if (roleName != null) {
+            stmt.bindString(2, roleName);
         }
  
         Boolean isActive = entity.getIsActive();
@@ -91,7 +91,7 @@ public class RolesDao extends AbstractDao<Roles, Long> {
     public Roles readEntity(Cursor cursor, int offset) {
         Roles entity = new Roles( //
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
-            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // name
+            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // roleName
             cursor.isNull(offset + 2) ? null : cursor.getShort(offset + 2) != 0, // isActive
             cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3) // condition
         );
@@ -102,7 +102,7 @@ public class RolesDao extends AbstractDao<Roles, Long> {
     @Override
     public void readEntity(Cursor cursor, Roles entity, int offset) {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
-        entity.setName(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
+        entity.setRoleName(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
         entity.setIsActive(cursor.isNull(offset + 2) ? null : cursor.getShort(offset + 2) != 0);
         entity.setCondition(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
      }
